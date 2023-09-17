@@ -44,12 +44,12 @@ h1, h2, h3, h4, h5 {
 */
 html, body {
     font-family: Avenir, sans-serif;
-    font-size: clamp(1rem, 0.5313rem + 1.5vw, 1.375rem); /* 16- 22 */
+    font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem); /* 16- 20 */
     color: var(--dark);
     background: var(--light);
 }
 
-main {
+main, .wrapper {
     width: 1280px;
     max-width: 100%;
     padding: 0 1rem;
