@@ -1,0 +1,50 @@
+/*
+* Variables
+*/
+:root:not(.dark) {
+    --accent: #d40000;
+    --dark: #333;
+    --light: #f8f9fa;
+}
+:root.dark {
+    --accent: #d40000;
+    --dark: #f8f9fa;
+    --light: #333;
+}
+
+/*
+* Font Faces
+*/
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/AvenirRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/AvenirHeavy.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/*
+* Typography
+*/
+
+h1, h2, h3, h4, h5 {
+    font-family: Avenir, sans-serif;
+}
+
+/*
+* Basic
+*/
+html {
+    font-family: Avenir, sans-serif;
+    font-size: clamp(1rem, 0.5313rem + 1.5vw, 1.375rem); /* 16- 22 */
+    color: var(--dark);
+    background: var(--light);
+}
