@@ -1,10 +1,118 @@
+---
+import { Image } from 'astro:assets';
+import logoImage from '@assets/frank_logo.svg'
+---
+<script>
+    const burgerToggle = window.document.getElementById('burger-toggle');
+    const headerNav = window.document.getElementById('header-nav');
+    const documentBody = window.document.body;
+    burgerToggle.addEventListener('click', () => {
+        burgerToggle.classList.toggle('close-icon');
+        headerNav.classList.toggle('show-nav');
+        documentBody.classList.toggle('fix-body');
+    })
+</script>
+
 <header>
     <div class="wrapper">
-        <nav>
-            <a href="/">Home</a>
-            <a href="/ueber-mich">Über mich</a>
-            <a href="/projekte">Projekte</a>
-            <a href="/kontakt">Kontakt</a>
-        </nav>
+        <a class="logo-link" href="/" aria-label="Link zur Startseite">
+            <Image src={logoImage} alt="Frank Zinsli | Mein Logo fürs Portfolio" width="300" loading="eager" />
+        </a>
+        <button type="button" id="burger-toggle" aria-label="Navigation Toggle Button">
+            <span />
+            <span />
+            <span />
+        </button>
     </div>
+    <nav id="header-nav">
+        <a href="/">Home</a>
+        <a href="/ueber-mich">Über mich</a>
+        <a href="/projekte">Projekte</a>
+        <a href="/kontakt">Kontakt</a>
+    </nav>
 </header>
+
+<style>
+    header {
+        background-color: #f8f9fa;
+        position: sticky;
+        top: 0;
+    }
+    .wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .wrapper img, .wrapper .logo-link {
+        width: 200px;
+        max-width: 50vw;
+        height: auto;
+    }
+    #burger-toggle {
+        all: unset;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        z-index: 1 !important;
+        align-items: center;
+    }
+    #burger-toggle span:nth-child(1), #burger-toggle span:nth-child(2), #burger-toggle span:nth-child(3) {
+        display: inline-block;
+        content: '';
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 3px 0;
+        transition: ease all 0.4s;
+    }
+    #burger-toggle span:nth-child(1) {
+        width: 25px;
+    }
+    #burger-toggle span:nth-child(2) {
+        background-color: #d40000;
+    }
+    #burger-toggle span:nth-child(3) {
+        width: 25px;
+    }
+    #burger-toggle.close-icon span:nth-child(1), #burger-toggle.close-icon span:nth-child(3) {
+        width: 35px;
+    }
+    .close-icon span:nth-child(1) {
+        transform: translate(0, 11px) rotate(-45deg);
+        background-color: var(--color-dark) !important;
+    }
+    .close-icon span:nth-child(2) {
+        opacity: 0;
+    }
+    .close-icon span:nth-child(3) {
+        transform: translate(0, -11px) rotate(45deg);
+        background-color: var(--color-dark) !important;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        position: fixed;
+        width: calc(100dvw - 8rem);
+        min-height: calc(100dvh - 16rem);
+        background: var(--color-light);
+        inset: 0;
+        transform: translateX(100dvw);
+        transition: ease all 0.4s;
+        padding: 8rem 4rem;
+    }
+    nav.show-nav {
+        transform: translate(0);
+    }
+    nav a {
+        font-weight: 700;
+        text-decoration: unset;
+        color: var(--color-dark);
+        font-size: 1.17em;
+    }
+</style>

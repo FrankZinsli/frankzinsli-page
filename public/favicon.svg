@@ -9,33 +9,25 @@
    id="svg5"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs2" />
   <g
-     id="g2893"
      transform="matrix(1.000125,0,0,0.99607843,-52.368446,-105.58432)"
-     style="stroke-width:1.0019">
+  >
     <path
-       id="rect2835"
-       style="fill:#d40000;fill-opacity:0.992157;stroke-width:0.131275;stroke-linecap:square;stroke-miterlimit:0"
+       style="fill:#d40000;fill-opacity:1;"
        transform="matrix(1.0194415,0,0,1,-4.3757088,2.9e-6)"
        d="m 55.725224,106 h 86.316426 v 85 H 55.725224 Z" />
     <g
-       aria-label="FRANK"
-       id="text236"
-       style="font-weight:bold;font-size:58.7559px;font-family:'Playfair Display';-inkscape-font-specification:'Playfair Display, Bold';fill:#333333;fill-opacity:0.992157;stroke-width:0.131274;stroke-linecap:square;stroke-miterlimit:0"
+       aria-label="Frank"
        transform="matrix(1.0194415,0,0,1,-4.3757088,2.9e-6)">
       <path
-         id="rect1003"
-         style="font-weight:bold;font-size:58.7559px;font-family:'Playfair Display';-inkscape-font-specification:'Playfair Display, Bold';fill:#f8f9fa;fill-opacity:0.99215686;stroke-width:0.131275;stroke-linecap:square;stroke-miterlimit:0"
+         style="fill:#f8f9fa;fill-opacity:1;"
          d="m 122.35998,127.70022 v 41.59952 h 7.44048 v -31.90451 h 0.11788 l 12.22093,18.86603 v -13.42657 l -9.91821,-15.13447 z" />
       <path
          d="m 83.581254,169.29959 3.760378,-9.51845 h 18.038058 l 3.87789,9.51845 h 8.46085 L 99.797883,127.70041 H 93.39349 l -18.096818,41.59918 z m 12.808787,-32.78579 6.404389,16.9217 H 89.868136 Z"
-         style="font-weight:normal;font-size:58.7559px;font-family:Avenir;-inkscape-font-specification:'Avenir, Normal';fill:#f8f9fa;fill-opacity:0.99215686;stroke-width:0.131274;stroke-linecap:square;stroke-miterlimit:0"
-         id="path2720" />
+         style="fill:#f8f9fa;fill-opacity:1;"
+      />
       <path
-         id="rect1003-9"
-         style="font-weight:bold;font-size:58.7559px;font-family:'Playfair Display';-inkscape-font-specification:'Playfair Display, Bold';fill:#f8f9fa;fill-opacity:0.99215686;stroke-width:0.131275;stroke-linecap:square;stroke-miterlimit:0"
+         style="fill:#f8f9fa;fill-opacity:1;"
          d="m 55.655602,127.70022 v 6.34534 h 1.244334 c 3.892326,0 8.197872,0.76397 8.197872,5.52318 0,5.17052 -4.482318,5.75779 -8.72849,5.75779 h -0.713716 v 6.34587 h 0.0062 l 9.671467,17.62683 h 8.964494 L 63.2103,150.90862 c 5.897462,-0.82258 9.671986,-5.05284 9.671986,-11.28097 0,-9.10715 -7.312921,-11.92743 -15.333471,-11.92743 z" />
     </g>
   </g>

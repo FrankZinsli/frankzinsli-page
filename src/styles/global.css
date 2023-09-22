@@ -1,15 +1,17 @@
 /*
 * Variables
 */
-:root:not(.dark) {
-    --accent: #d40000;
-    --dark: #333;
-    --light: #f8f9fa;
+:root {
+    --color-accent: #d40000;
+    --color-dark: #333;
+    --color-light: #f8f9fa;
 }
-:root.dark {
-    --accent: #d40000;
-    --dark: #f8f9fa;
-    --light: #333;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-accent: #d40000;
+        --color-dark: #f8f9fa;
+        --color-light: #333;
+    }
 }
 
 /*
@@ -45,13 +47,16 @@ h1, h2, h3, h4, h5 {
 html, body {
     font-family: Avenir, sans-serif;
     font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem); /* 16- 20 */
-    color: var(--dark);
-    background: var(--light);
+    color: var(--color-dark);
+    background: var(--color-light);
+    background-image: url('/images/background.svg');
 }
-
+body.fix-body {
+    overflow: hidden;
+}
 main, .wrapper {
     width: 1280px;
-    max-width: 100%;
+    max-width: calc(100% - 2rem);
     padding: 0 1rem;
     margin: 0 auto;
 }
