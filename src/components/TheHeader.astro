@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import logoImage from '@assets/frank_logo.svg'
+const currentPath = Astro.url.pathname;
 ---
 <script>
     const burgerToggle = window.document.getElementById('burger-toggle');
@@ -18,6 +19,41 @@ import logoImage from '@assets/frank_logo.svg'
         <a class="logo-link" href="/" aria-label="Link zur Startseite">
             <Image src={logoImage} alt="Frank Zinsli | Mein Logo fürs Portfolio" width="300" loading="eager" />
         </a>
+        <div class="social-wrapper">
+            <a class="social-icon" title="Link zu meinem Linkedin Profil" href="https://ch.linkedin.com/in/frank-zinsli" target="_blank" rel="noreferrer nofollow noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                    <path d="M8 11l0 5" />
+                    <path d="M8 8l0 .01" />
+                    <path d="M12 16l0 -5" />
+                    <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+                </svg>
+            </a>
+            <a class="social-icon" title="Link zu meinem Instagram Profil" href="https://www.instagram.com/frank.zinsli/" target="_blank" rel="noreferrer nofollow noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M16.5 7.5l0 .01" />
+                </svg>
+            </a>
+            <a class="social-icon" title="Link zu meinem Facebook Profil" href="https://www.facebook.com/frank.zinsli/?locale=de_DE" target="_blank" rel="noreferrer nofollow noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                </svg>
+            </a>
+            <a class="social-icon" title="Link zu meiner E-Mail" href="mailto:hallo@frankzinsli.ch">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M3 7h3" />
+                    <path d="M3 11h2" />
+                    <path d="M9.02 8.801l-.6 6a2 2 0 0 0 1.99 2.199h7.98a2 2 0 0 0 1.99 -1.801l.6 -6a2 2 0 0 0 -1.99 -2.199h-7.98a2 2 0 0 0 -1.99 1.801z" />
+                    <path d="M9.8 7.5l2.982 3.28a3 3 0 0 0 4.238 .202l3.28 -2.982" />
+                </svg>
+            </a>
+        </div>
         <button type="button" id="burger-toggle" aria-label="Navigation Toggle Button">
             <span />
             <span />
@@ -25,10 +61,10 @@ import logoImage from '@assets/frank_logo.svg'
         </button>
     </div>
     <nav id="header-nav">
-        <a href="/">Home</a>
-        <a href="/ueber-mich">Über mich</a>
-        <a href="/projekte">Projekte</a>
-        <a href="/kontakt">Kontakt</a>
+        <span><a href="/" class:list={[currentPath === '/' && 'active']}>Home</a></span>
+        <span><a href="/ueber-mich" class:list={[currentPath === '/ueber-mich' && 'active']}>Über mich</a></span>
+        <span><a href="/projekte" class:list={[currentPath === '/projekte' && 'active']}>Projekte</a></span>
+        <span><a href="/kontakt" class:list={[currentPath === '/kontakt' && 'active']}>Kontakt</a></span>
     </nav>
 </header>
 
@@ -37,6 +73,7 @@ import logoImage from '@assets/frank_logo.svg'
         background-color: #f8f9fa;
         position: sticky;
         top: 0;
+        background-image: url('/images/background.svg');
     }
     .wrapper {
         display: flex;
@@ -45,11 +82,15 @@ import logoImage from '@assets/frank_logo.svg'
         align-items: center;
         padding-top: 1rem;
         padding-bottom: 1rem;
+        position: relative;
     }
     .wrapper img, .wrapper .logo-link {
         width: 200px;
         max-width: 50vw;
         height: auto;
+    }
+    .social-wrapper {
+        display: none;
     }
     #burger-toggle {
         all: unset;
@@ -72,7 +113,7 @@ import logoImage from '@assets/frank_logo.svg'
         width: 25px;
     }
     #burger-toggle span:nth-child(2) {
-        background-color: #d40000;
+        background-color: var(--color-accent);
     }
     #burger-toggle span:nth-child(3) {
         width: 25px;
@@ -114,5 +155,107 @@ import logoImage from '@assets/frank_logo.svg'
         text-decoration: unset;
         color: var(--color-dark);
         font-size: 1.17em;
+    }
+    @media (min-width: 768px) {
+        .social-wrapper {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: .5rem;
+        }
+        .social-icon {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+        }
+        .social-icon svg {
+            width: 100%;
+            height: auto;
+        }
+        header {
+            padding-bottom: 4rem;
+        }
+        .wrapper {
+            padding-bottom: 3rem;
+        }
+        #burger-toggle {
+            display: none;
+        }
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            gap: 0;
+            position: relative;
+            width: fit-content;
+            min-height: unset;
+            background: unset;
+            inset: unset;
+            transform: unset;
+            transition: ease all 0.4s;
+            padding: 1rem 1rem .5rem;
+            border-bottom: 1px solid #333;
+        }
+        nav a {
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #333;
+            position: relative;
+        }
+        nav span:not(:first-child):before {
+            content: "⦁";
+            padding: 0 1.25rem;
+            color: var(--color-accent);
+        }
+        nav span a:before, nav span a:after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            display: block;
+        }
+        nav a:before {
+            top: -10px;
+            left: -15px;
+            border-bottom: 3px solid transparent;
+            border-right: 3px solid transparent;
+            transition: top ease 0.4s, left ease 0.4s;
+        }
+        nav a:after {
+            right: -15px;
+            bottom: -5px;
+            border-top: 3px solid transparent;
+            border-left: 3px solid transparent;
+            transition: bottom ease 0.4s, right ease 0.4s;
+        }
+        nav a:hover:before {
+            top: -5px;
+            left: -10px;
+            border-top: 3px solid var(--color-accent);
+            border-left: 3px solid var(--color-accent);
+            transition: top ease 0.4s, left ease 0.4s;
+        }
+        nav a:hover:after {
+            right: -10px;
+            bottom: 0;
+            border-bottom: 3px solid var(--color-accent);
+            border-right: 3px solid var(--color-accent);
+            transition: bottom ease 0.4s, right ease 0.4s;
+        }
+        nav a.active:before {
+            top: -5px;
+            left: -10px;
+            border-top: 3px solid var(--color-accent);
+            border-left: 3px solid var(--color-accent);
+        }
+        nav a.active:after {
+            right: -10px;
+            bottom: 0;
+            border-bottom: 3px solid var(--color-accent);
+            border-right: 3px solid var(--color-accent);
+        }
     }
 </style>
