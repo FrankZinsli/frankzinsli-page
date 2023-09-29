@@ -1,11 +1,14 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import ProjectSwiper from "@components/ProjectSwiper.astro";
 ---
 
 <Layout
 	title="Mein persönliches Portfolio - Frank"
 	description="Beispielbeschreibung"
 >
+	<h1>Herzlich willkommen auf meinem Portfolio</h1>
+	<ProjectSwiper />
 	<section>
 		<h1>Heading1</h1>
 		<h2>Heading2</h2>
@@ -33,4 +36,7 @@ import Layout from '@layouts/Layout.astro';
 </Layout>
 
 <style>
+	h1 {
+		text-align: center;
+	}
 </style>

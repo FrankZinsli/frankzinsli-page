@@ -8,13 +8,13 @@
     --color-light: #f8f9fa;
     --color-always-light: #f8f9fa;
 }
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
     :root {
         --color-accent: #d40000;
         --color-dark: #f8f9fa;
         --color-light: #333;
     }
-}
+}*/
 
 /*
 * Font Faces
@@ -63,7 +63,9 @@ main, .wrapper {
     margin: 0 auto;
 }
 main {
-    padding-top: 308px;
+    @media (min-width: 992px) {
+        padding-top: 308px;
+    }
 }
 ::selection {
     color: var(--color-light);

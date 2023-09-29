@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/prefetch": "^0.4.0",
     "astro": "^3.2.0",
-    "sass": "^1.68.0"
+    "sass": "^1.68.0",
+    "swiper": "^10.3.1"
   }
 }
