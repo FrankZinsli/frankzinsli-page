@@ -148,9 +148,6 @@ export default {
   height: auto;
   aspect-ratio: 1/1;
 }
-.swiper-wrapper {
-  padding-bottom: 2rem;
-}
 .swiper-pagination {
   .swiper-pagination-bullet-active {
     background-color: #d40000;
