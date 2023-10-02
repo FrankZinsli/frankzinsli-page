@@ -163,7 +163,7 @@ const currentPath = Astro.url.pathname;
                 <a
                         href="/ueber-mich"
                         rel="prefetch"
-                        class:list={[currentPath === '/ueber-mich' && 'active']}
+                        class:list={[currentPath.includes('ueber-mich') && 'active']}
                 >
                     Über mich
                 </a>
@@ -172,13 +172,13 @@ const currentPath = Astro.url.pathname;
                 <a
                         href="/projekte"
                         rel="prefetch"
-                        class:list={[currentPath === '/projekte' && 'active']}
+                        class:list={[currentPath.includes('projekte') && 'active']}
                 >
                     Projekte
                 </a>
             </span>
                 <span>
-                <a href="/kontakt" rel="prefetch" class:list={[currentPath === '/kontakt' && 'active']}>
+                <a href="/kontakt" rel="prefetch" class:list={[currentPath.includes('kontakt') && 'active']}>
                     Kontakt
                 </a>
             </span>
