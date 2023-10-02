@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import ProjectSwiper from "@components/ProjectSwiper.astro";
+import ProjectSwiperVue from "@components/ProjectSwiper.vue";
 ---
 
 <Layout
@@ -8,7 +8,7 @@ import ProjectSwiper from "@components/ProjectSwiper.astro";
 	description="Beispielbeschreibung"
 >
 	<h1>Herzlich willkommen auf meinem Portfolio</h1>
-	<ProjectSwiper />
+	<ProjectSwiperVue client:load />
 	<section>
 		<h1>Heading1</h1>
 		<h2>Heading2</h2>
