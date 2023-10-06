@@ -62,6 +62,15 @@ import p04_lg from "@assets/projects/coronavirus-community-map-lg.webp";
 import p05_sm from "@assets/projects/mattsphoto-sm.webp";
 import p05_md from "@assets/projects/mattsphoto-md.webp";
 import p05_lg from "@assets/projects/mattsphoto-lg.webp";
+import p06_sm from "@assets/projects/observation-map-sm.webp";
+import p06_md from "@assets/projects/observation-map-md.webp";
+import p06_lg from "@assets/projects/observation-map-lg.webp";
+import p07_sm from "@assets/projects/oekologisch-sm.webp";
+import p07_md from "@assets/projects/oekologisch-md.webp";
+import p07_lg from "@assets/projects/oekologisch-lg.webp";
+import p08_sm from "@assets/projects/mein-portfolio-sm.webp";
+import p08_md from "@assets/projects/mein-portfolio-md.webp";
+import p08_lg from "@assets/projects/mein-portfolio-lg.webp";
 
 export default {
   components: {
@@ -116,6 +125,33 @@ export default {
             lg: p05_lg
           },
           alt: 'Mattsphoto.ch - Naturfotografie Graubünden'
+        },
+        {
+          title: 'Observation Map',
+          images: {
+            sm: p06_sm,
+            md: p06_md,
+            lg: p06_lg
+          },
+          alt: 'Observation Map - Vue App für die Wildtierbeobachtung'
+        },
+        {
+          title: 'Ökologisch',
+          images: {
+            sm: p07_sm,
+            md: p07_md,
+            lg: p07_lg
+          },
+          alt: 'Ökologisch - Eine Plattform zum Näherbringen des SDG 12.'
+        },
+        {
+          title: 'Mein Portfolio',
+          images: {
+            sm: p08_sm,
+            md: p08_md,
+            lg: p08_lg
+          },
+          alt: 'Mein Portfolio - Wie ich es aufgebaut habe.'
         }
       ]
     };
@@ -134,7 +170,8 @@ export default {
   background-size: cover;
   width: 100%;
   max-width: 250px;
-  height: 250px;
+  aspect-ratio: 1/1;
+  height: auto;
   @media (min-width: 768px) {
     max-width: 300px;
   }
