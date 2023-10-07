@@ -301,10 +301,11 @@ const currentPath = Astro.url.pathname;
         top: -200px;
         left: 0;
         opacity: 0;
+        transition: all ease 300ms;
       }
       &.fix-top-show {
         top: 0;
-        transition: top ease 300ms;
+        transition: all ease 300ms;
         opacity: 1;
         background-image: unset;
         box-shadow: 0 10px 30px 5px rgba(0,0,0,0.1)
