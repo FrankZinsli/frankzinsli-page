@@ -1,1 +1,23 @@
-<div></div>
+---
+import oekologischImage from "../assets/projects/oekologisch-lg.webp";
+import headerImage from "../assets/projects/1914-in-a-timeline-lg.webp";
+import {Image} from "astro:assets";
+---
+<section>
+    <article>
+        <a href="/projekte/1914-in-a-timeline-glamhack">
+            <Image
+                src={headerImage}
+                alt="AltImage"
+                loading="eager"
+            />
+        </a>
+        <a href="/projekte/oekologisch">
+            <Image
+               src={oekologischImage}
+               alt="AltImage"
+               loading="eager"
+            />
+        </a>
+    </article>
+</section>
