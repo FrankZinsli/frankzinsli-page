@@ -52,6 +52,10 @@ html, body {
     color: var(--color-dark);
     background: var(--color-light);
     background-image: url('/images/background.svg');
+    min-height: 100dvh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
 }
 body.fix-body {
     overflow: hidden;

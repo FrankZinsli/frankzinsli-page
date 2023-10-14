@@ -4,13 +4,32 @@ import logoImage from '@assets/frank_logo.svg'
 const currentPath = Astro.url.pathname;
 ---
 <script>
-    const burgerToggle = window.document.getElementById('burger-toggle');
-    const headerNav = window.document.getElementById('header-nav');
-    const documentBody = window.document.body;
+    const burgerToggle = document.getElementById('burger-toggle');
+    const headerNav = document.getElementById('header-nav');
+    const headerLogo = document.getElementById('logo-link')
+    const documentBody = document.body;
     burgerToggle.addEventListener('click', () => {
         burgerToggle.classList.toggle('close-icon');
         headerNav.classList.toggle('show-nav');
         documentBody.classList.toggle('fix-body');
+        console.log(burgerToggle.classList.contains('close-icon'))
+        if (burgerToggle.classList.contains('close-icon')) {
+            headerLogo.style.transform = 'scale(0)';
+            setTimeout(() => {
+                headerLogo.style.transition = 'all ease-in-out 0.3s';
+                setTimeout(() => {
+                    headerLogo.style.zIndex = '3';
+                    headerLogo.style.transform = 'scale(1)';
+                }, 150)
+            }, 150)
+
+        } else {
+            headerLogo.style.transform = 'unset';
+            headerLogo.style.transition = 'unset';
+            setTimeout(() => {
+                headerLogo.style.zIndex = 'unset';
+            }, 300)
+        }
     })
     let lastKnownScrollPosition = 0;
     let ticking = false;
@@ -27,11 +46,14 @@ const currentPath = Astro.url.pathname;
             document.getElementById('header-wrapper').classList.remove('fix-top');
             document.getElementById('header-social-wrapper').classList.remove('fix-top');
             document.getElementById('header').classList.remove('fix-top');
+            document.getElementById('header').style.transition = 'unset';
         }
         if (scrollPos > 700) {
             document.getElementById('header').classList.add('fix-top-show');
+            document.getElementById('header').style.transition = 'all ease 300ms';
         } else {
             document.getElementById('header').classList.remove('fix-top-show');
+
         }
     }
 
@@ -52,27 +74,27 @@ const currentPath = Astro.url.pathname;
 
 <header id="header">
     <div id="header-wrapper" class="wrapper">
-        <a class="logo-link" href="/" aria-label="Link zur Startseite" rel="prefetch">
+        <a id="logo-link" href="/" aria-label="Link zur Startseite" rel="prefetch">
             <Image src={logoImage} alt="Frank Zinsli | Mein Logo fürs Portfolio" width="300" loading="eager" />
         </a>
         <div id="header-social-wrapper" class="social-wrapper">
             <a
-                class="social-icon"
-                title="Link zu meinem Linkedin Profil"
-                href="https://ch.linkedin.com/in/frank-zinsli"
-                target="_blank"
-                rel="noreferrer nofollow noopener"
+                    class="social-icon"
+                    title="Link zu meinem Linkedin Profil"
+                    href="https://ch.linkedin.com/in/frank-zinsli"
+                    target="_blank"
+                    rel="noreferrer nofollow noopener"
             >
                 <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="var(--color-always-dark)"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="var(--color-always-dark)"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
@@ -83,22 +105,22 @@ const currentPath = Astro.url.pathname;
                 </svg>
             </a>
             <a
-                class="social-icon"
-                title="Link zu meinem Instagram Profil"
-                href="https://www.instagram.com/frank.zinsli/"
-                target="_blank"
-                rel="noreferrer nofollow noopener"
+                    class="social-icon"
+                    title="Link zu meinem Instagram Profil"
+                    href="https://www.instagram.com/frank.zinsli/"
+                    target="_blank"
+                    rel="noreferrer nofollow noopener"
             >
                 <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="var(--color-always-dark)"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="var(--color-always-dark)"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
@@ -107,22 +129,22 @@ const currentPath = Astro.url.pathname;
                 </svg>
             </a>
             <a
-                class="social-icon"
-                title="Link zu meinem Facebook Profil"
-                href="https://www.facebook.com/frank.zinsli/?locale=de_DE"
-                target="_blank"
-                rel="noreferrer nofollow noopener"
+                    class="social-icon"
+                    title="Link zu meinem Facebook Profil"
+                    href="https://www.facebook.com/frank.zinsli/?locale=de_DE"
+                    target="_blank"
+                    rel="noreferrer nofollow noopener"
             >
                 <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="var(--color-always-dark)"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="var(--color-always-dark)"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
@@ -130,15 +152,15 @@ const currentPath = Astro.url.pathname;
             </a>
             <a class="social-icon" title="Link zu meiner E-Mail" href="mailto:hallo@frankzinsli.ch">
                 <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="var(--color-always-dark)"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="44"
+                        height="44"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="var(--color-always-dark)"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M3 7h3" />
@@ -159,16 +181,7 @@ const currentPath = Astro.url.pathname;
                     Home
                 </a>
             </span>
-                <span>
-                <a
-                        href="/ueber-mich"
-                        rel="prefetch"
-                        class:list={[currentPath.includes('ueber-mich') && 'active']}
-                >
-                    Über mich
-                </a>
-            </span>
-                <span>
+            <span>
                 <a
                         href="/projekte"
                         rel="prefetch"
@@ -177,7 +190,7 @@ const currentPath = Astro.url.pathname;
                     Projekte
                 </a>
             </span>
-                <span>
+            <span>
                 <a href="/kontakt" rel="prefetch" class:list={[currentPath.includes('kontakt') && 'active']}>
                     Kontakt
                 </a>
@@ -202,7 +215,7 @@ const currentPath = Astro.url.pathname;
     padding-bottom: 1rem;
     position: relative;
 
-    img, .logo-link {
+    img, #logo-link {
       width: 200px;
       max-width: 50vw;
       height: auto;
@@ -218,7 +231,7 @@ const currentPath = Astro.url.pathname;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    z-index: 1 !important;
+    z-index: 3 !important;
     align-items: center;
 
     span:nth-child(1), span:nth-child(2), span:nth-child(3) {
@@ -266,13 +279,14 @@ const currentPath = Astro.url.pathname;
 
   nav {
     display: flex;
+    z-index: 2;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
     position: fixed;
-    width: calc(100dvw - 8rem);
-    min-height: calc(100dvh - 16rem);
+    width: calc(100vw - 8rem);
+    min-height: calc(100vh - 16rem);
     background: var(--color-light);
     inset: 0;
     transform: translateX(100dvw);
@@ -292,35 +306,43 @@ const currentPath = Astro.url.pathname;
   }
 
   @media (min-width: 992px) {
+    #logo-link {
+      width: 33%;
+    }
     header {
       position: absolute;
       top: 0;
-      width: 100vw;
+      width: 100%;
+
       &.fix-top {
         position: fixed;
         top: -200px;
         left: 0;
         opacity: 0;
-        transition: all ease 300ms;
       }
+
       &.fix-top-show {
         top: 0;
         transition: all ease 300ms;
         opacity: 1;
         background-image: unset;
-        box-shadow: 0 10px 30px 5px rgba(0,0,0,0.1)
+        box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.1)
       }
     }
     .social-wrapper {
       display: flex;
       flex-flow: row nowrap;
+      justify-content: end;
       gap: .5rem;
+      width: 66%;
+
       &.fix-top {
         position: absolute;
         top: 0;
         right: 0;
         gap: .15rem;
         padding: 1rem 1rem 0 0;
+
         .social-icon {
           width: 25px;
           height: 25px;
@@ -331,10 +353,12 @@ const currentPath = Astro.url.pathname;
       display: inline-block;
       width: 50px;
       height: 50px;
+
       svg {
         width: 100%;
         height: auto;
         opacity: .8;
+
         &:hover {
           opacity: 1;
         }
@@ -343,6 +367,7 @@ const currentPath = Astro.url.pathname;
     .wrapper {
       gap: 6rem;
       padding-bottom: 3rem;
+
       &.fix-top {
         gap: 0;
         padding-bottom: 2rem;
@@ -369,6 +394,7 @@ const currentPath = Astro.url.pathname;
       transition: unset;
       padding: 0 1rem .5rem;
       border-bottom: 1px solid var(--color-always-dark);
+
       &.fix-top {
         padding: 0.5rem 1rem 0.5rem;
       }
