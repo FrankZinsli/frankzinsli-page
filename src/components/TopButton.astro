@@ -1,0 +1,52 @@
+---
+---
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const buttonEl = document.getElementById('topButton');
+
+        const scrollFunction = () => {
+            if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+                buttonEl.classList.add('show-button');
+            } else {
+                buttonEl.classList.remove('show-button');
+            }
+        }
+        const topFunction = () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        buttonEl.addEventListener('click', () => {
+            topFunction();
+        });
+        window.onscroll = function() {scrollFunction()};
+    });
+</script>
+
+<button id="topButton" type="button" title="Go to top">Top</button>
+
+<style lang="scss">
+  #topButton {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    transform: scale(0);
+    z-index: 99;
+    font-size: 1rem;
+    outline: none;
+    background-color: var(--color-accent);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    border: solid 1px var(--color-light);
+    transition: all ease-in-out 300ms;
+    &.show-button {
+      transform: scale(1);
+    }
+  }
+
+  #topButton:hover {
+    background-color: var(--color-dark);
+  }
+</style>

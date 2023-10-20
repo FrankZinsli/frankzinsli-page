@@ -52,10 +52,10 @@ html, body {
     color: var(--color-dark);
     background: var(--color-light);
     background-image: url('/images/background.svg');
-    min-height: 100dvh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    scroll-behavior: smooth;
 }
 body.fix-body {
     overflow: hidden;
@@ -63,17 +63,50 @@ body.fix-body {
 main, .wrapper {
     width: 1280px;
     max-width: calc(100% - 2rem);
-    padding: 0 1rem;
     margin: 0 auto;
 }
+
 main {
     @media (min-width: 992px) {
         padding-top: 308px;
     }
 }
+
+main p a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    color: var(--color-dark);
+    background-image: url('../assets/icons/external-link.svg');
+    background-size: 1rem;
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 1rem;
+    transition: all ease-in-out 300ms;
+}
+main p a.mail {
+    background-image: url('../assets/icons/mail.svg');
+}
+main p a.internal {
+    background-image: url('../assets/icons/internal-link.svg');
+}
+main p a:hover {
+    text-decoration-color: var(--color-accent);
+    background-image: url('../assets/icons/external-link-hover.svg');
+}
+main p a.mail:hover {
+    text-decoration-color: var(--color-accent);
+    background-image: url('../assets/icons/mail-hover.svg');
+}
+main p a.internal:hover {
+    background-image: url('../assets/icons/internal-link-hover.svg');
+}
+
+footer {
+    margin-top: 5rem;
+}
 ::selection {
     color: var(--color-light);
-    background-color: var(--color-dark);
+    background-color: var(--color-accent);
 }
 
 

@@ -3,72 +3,82 @@ import {Image} from 'astro:assets';
 import logoImage from '@assets/frank_logo.svg'
 const currentPath = Astro.url.pathname;
 ---
-<script>
-    const burgerToggle = document.getElementById('burger-toggle');
-    const headerNav = document.getElementById('header-nav');
-    const headerLogo = document.getElementById('logo-link')
-    const documentBody = document.body;
-    burgerToggle.addEventListener('click', () => {
-        burgerToggle.classList.toggle('close-icon');
-        headerNav.classList.toggle('show-nav');
-        documentBody.classList.toggle('fix-body');
-        console.log(burgerToggle.classList.contains('close-icon'))
-        if (burgerToggle.classList.contains('close-icon')) {
-            headerLogo.style.transform = 'scale(0)';
-            setTimeout(() => {
-                headerLogo.style.transition = 'all ease-in-out 0.3s';
+<script is:inline>
+    document.addEventListener('astro:page-load', () => {
+        const burgerToggle = document.getElementById('burger-toggle');
+        const headerNav = document.getElementById('header-nav');
+        const headerLogo = document.getElementById('logo-link');
+        const documentBody = document.body;
+        const headerLinks = document.querySelectorAll('.header-links');
+
+        const toggleBurger = () => {
+            burgerToggle.classList.toggle('close-icon');
+            headerNav.classList.toggle('show-nav');
+            documentBody.classList.toggle('fix-body');
+            if (burgerToggle.classList.contains('close-icon')) {
+                headerLogo.style.transform = 'scale(0)';
                 setTimeout(() => {
-                    headerLogo.style.zIndex = '3';
-                    headerLogo.style.transform = 'scale(1)';
+                    headerLogo.style.transition = 'all ease-in-out 0.3s';
+                    setTimeout(() => {
+                        headerLogo.style.zIndex = '3';
+                        headerLogo.style.transform = 'scale(1)';
+                    }, 150)
                 }, 150)
-            }, 150)
 
-        } else {
-            headerLogo.style.transform = 'unset';
-            headerLogo.style.transition = 'unset';
-            setTimeout(() => {
-                headerLogo.style.zIndex = 'unset';
-            }, 300)
+            } else {
+                headerLogo.style.transform = 'unset';
+                headerLogo.style.transition = 'unset';
+                setTimeout(() => {
+                    headerLogo.style.zIndex = 'unset';
+                }, 300)
+            }
         }
-    })
-    let lastKnownScrollPosition = 0;
-    let ticking = false;
-    let up = false;
 
-    function doSomething(scrollPos) {
-        if (scrollPos > 400) {
-            document.getElementById('header-nav').classList.add('fix-top');
-            document.getElementById('header-wrapper').classList.add('fix-top');
-            document.getElementById('header-social-wrapper').classList.add('fix-top');
-            document.getElementById('header').classList.add('fix-top');
-        } else {
-            document.getElementById('header-nav').classList.remove('fix-top');
-            document.getElementById('header-wrapper').classList.remove('fix-top');
-            document.getElementById('header-social-wrapper').classList.remove('fix-top');
-            document.getElementById('header').classList.remove('fix-top');
-            document.getElementById('header').style.transition = 'unset';
+        headerLinks.forEach((link) => {
+            link.addEventListener('click', () => toggleBurger());
+        })
+        burgerToggle.addEventListener('click', () => toggleBurger());
+
+
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        let up = false;
+
+        const doSomething = (scrollPos) => {
+            if (scrollPos > 400) {
+                document.getElementById('header-nav').classList.add('fix-top');
+                document.getElementById('header-wrapper').classList.add('fix-top');
+                document.getElementById('header-social-wrapper').classList.add('fix-top');
+                document.getElementById('header').classList.add('fix-top');
+            } else {
+                document.getElementById('header-nav').classList.remove('fix-top');
+                document.getElementById('header-wrapper').classList.remove('fix-top');
+                document.getElementById('header-social-wrapper').classList.remove('fix-top');
+                document.getElementById('header').classList.remove('fix-top');
+                document.getElementById('header').style.transition = 'unset';
+            }
+            if (scrollPos > 700) {
+                document.getElementById('header').classList.add('fix-top-show');
+                document.getElementById('header').style.transition = 'all ease 300ms';
+            } else {
+                document.getElementById('header').classList.remove('fix-top-show');
+
+            }
         }
-        if (scrollPos > 700) {
-            document.getElementById('header').classList.add('fix-top-show');
-            document.getElementById('header').style.transition = 'all ease 300ms';
-        } else {
-            document.getElementById('header').classList.remove('fix-top-show');
 
-        }
-    }
+        document.addEventListener("scroll", (event) => {
+            up = lastKnownScrollPosition > window.scrollY;
+            lastKnownScrollPosition = window.scrollY;
 
-    document.addEventListener("scroll", (event) => {
-        up = lastKnownScrollPosition > window.scrollY;
-        lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    doSomething(lastKnownScrollPosition);
+                    ticking = false;
+                });
 
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                doSomething(lastKnownScrollPosition);
-                ticking = false;
-            });
-
-            ticking = true;
-        }
+                ticking = true;
+            }
+        });
     });
 </script>
 
@@ -177,12 +187,13 @@ const currentPath = Astro.url.pathname;
         </button>
         <nav id="header-nav">
             <span>
-                <a href="/" rel="prefetch" class:list={[currentPath === '/' && 'active']}>
+                <a class="header-link" href="/" rel="prefetch" class:list={[currentPath === '/' && 'active']}>
                     Home
                 </a>
             </span>
             <span>
                 <a
+                        class="header-link"
                         href="/projekte"
                         rel="prefetch"
                         class:list={[currentPath.includes('projekte') && 'active']}
@@ -191,7 +202,12 @@ const currentPath = Astro.url.pathname;
                 </a>
             </span>
             <span>
-                <a href="/kontakt" rel="prefetch" class:list={[currentPath.includes('kontakt') && 'active']}>
+                <a
+                        class="header-link"
+                        href="/kontakt"
+                        rel="prefetch"
+                        class:list={[currentPath.includes('kontakt') && 'active']}
+                >
                     Kontakt
                 </a>
             </span>
@@ -283,13 +299,13 @@ const currentPath = Astro.url.pathname;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     position: fixed;
-    width: calc(100vw - 8rem);
+    width: calc(100% - 8rem);
     min-height: calc(100vh - 16rem);
     background: var(--color-light);
     inset: 0;
-    transform: translateX(100dvw);
+    transform: translateX(100%);
     transition: ease all 0.4s;
     padding: 8rem 4rem;
 
@@ -301,7 +317,7 @@ const currentPath = Astro.url.pathname;
       font-weight: 700;
       text-decoration: unset;
       color: var(--color-dark);
-      font-size: 1.17em;
+      font-size: 2rem;
     }
   }
 
