@@ -1,3 +1,68 @@
 ---
+import { Image } from 'astro:assets';
+import headerImage from '../../assets/projects/oekologisch-lg.webp';
+import Layout from "../../layouts/Layout.astro";
+const metaTitle = 'Frank - Projekte - Observation Map';
+const metaDescription = 'MetaDescription';
 ---
+<Layout
+    title={metaTitle}
+    description={metaDescription}
+>
+    <article>
+        <header>
+            <Image
+                src={headerImage}
+                alt="AltImage"
+                loading="eager"
+            />
+        </header>
+        <div>
+           Case Study: "Observation Map V1.0 – Die Hilfsanwendung für Wildtierbeobachtung"
 
+**Veröffentlicht am 4. Juni 2020 von Frank Zinsli**
+
+**Einleitung**
+
+Viele Wildtier-Beobachter teilen ein gemeinsames Anliegen - die Tiere in ihrem natürlichen Lebensraum so wenig wie möglich zu stören. Diese Sorge führte zur Entwicklung der "Observation Map", einer Anwendung, die es ermöglicht, Wildtierbeobachtungen auf einer interaktiven Karte festzuhalten. Dies kann direkt vor Ort mithilfe der Geodaten des Geräts oder bequem von zu Hause aus erfolgen. Das Ziel ist, durch die Karte zu erkennen, wo sich die Wildtiere aufhalten. Dies ermöglicht es, sich leise an die Tiere heranzuschleichen, ohne sie zu verschrecken.
+
+**Hintergrund**
+
+Die Inspiration für dieses Projekt ergab sich aus einer Anfrage eines alten Schulkameraden, der die "Zizers hilft" Website gesehen hatte. Er erkundigte sich, ob es möglich sei, eine ähnliche Web-Applikation für seine Wildtierbeobachtungen zu entwickeln. Als leidenschaftlicher Wildtierfotograf wollte er sicherstellen, dass seine Anwesenheit die Tiere nicht in Stress versetzt, sondern es ihm ermöglicht, sie gezielt zu beobachten.
+
+Da es sich hierbei um ein dynamisches Projekt handelte, erforderte die Umsetzung die Verwendung von neuen Technologien. Es wurden spezifische Tools ausgewählt, um die Anforderungen des Projekts zu erfüllen, darunter:
+- **Vue JS** als JavaScript-Framework.
+- **VueLayers** für die Integration von OpenStreetMap.
+- **Firebase Authentication** zur Verwaltung der Benutzeranmeldungen.
+
+**Projektziele**
+
+Die Hauptziele der "Observation Map" waren:
+1. Das Erfassen von neuen Beobachtungen mithilfe von Geodaten.
+2. Das Erfassen von neuen Beobachtungen über die interaktive Karte.
+3. Die Darstellung der erfassten Beobachtungen auf einer Karte.
+4. Die Darstellung der erfassten Beobachtungen in tabellarischer Form.
+
+**Funktionsumfang**
+
+Im Rahmen der ersten Version der Web-Applikation wurden diese grundlegenden Funktionen erfolgreich integriert. Benutzer konnten ihre Beobachtungen einfach erfassen und auf einer Karte sowie in einer übersichtlichen Tabelle anzeigen lassen. Diese Funktionen schufen eine benutzerfreundliche Umgebung für Wildtierbeobachter, um ihre Erlebnisse festzuhalten und zu organisieren.
+
+**Technologische Umsetzung**
+
+Die technische Umsetzung des Projekts erfolgte mithilfe modernster Technologien. Vue JS diente als JavaScript-Framework, um die Benutzeroberfläche zu gestalten. VueLayers wurde verwendet, um OpenStreetMap zu integrieren, was eine reibungslose Kartenansicht ermöglichte. Die Verwaltung von Benutzeranmeldungen und -authentifizierungen erfolgte über Firebase.
+
+**Ausblick und Demoversion**
+
+Eine Demoversion mit den Grundfunktionen des Projekts ist auf meiner Github-Pages Seite verfügbar. Beachten Sie jedoch, dass Firebase in dieser Version noch nicht integriert ist, um einen übermäßigen Datenfluss zu verhindern, bevor die Anwendung in ihrem vollen Funktionsumfang fertiggestellt ist.
+
+Weitere Informationen und Details zum Projekt finden Sie in meinem Github-Repository.
+
+**Fazit**
+
+Die "Observation Map" bietet eine innovative Lösung für Wildtierbeobachter, die es ermöglicht, ihre Beobachtungen auf einfache Weise festzuhalten und zu organisieren. Im Gegensatz zu anderen Jagd-Apps wurde der Fokus hier bewusst auf die Bedürfnisse von Beobachtern gelegt, wodurch der Funktionsumfang überschaubar bleibt. Das Projekt zeichnet sich durch die Verwendung moderner Technologien und die Integration von Geodaten aus und trägt dazu bei, die natürliche Umgebung der Tiere zu schützen und das Beobachten zu erleichtern.
+        </div>
+        <footer>
+            This is the Footer
+        </footer>
+    </article>
+</Layout>
