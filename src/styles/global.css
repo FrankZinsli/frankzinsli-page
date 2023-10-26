@@ -56,9 +56,6 @@ html, body {
     flex-flow: column nowrap;
     justify-content: space-between;
     scroll-behavior: smooth;
-    @supports (min-height: 100dvh) {
-        min-height: 100dvh;
-    }
     min-height: 100vh;
 }
 body.fix-body {
