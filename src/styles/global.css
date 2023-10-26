@@ -58,6 +58,11 @@ html, body {
     scroll-behavior: smooth;
     min-height: 100vh;
 }
+@supports(min-height: 1dvh) {
+    html, body {
+        min-height: 100dvh;
+    }
+}
 body.fix-body {
     overflow: hidden;
 }
