@@ -1,6 +1,7 @@
 ---
 import oekologischImage from "../assets/projects/oekologisch-lg.webp";
 import headerImage from "../assets/projects/1914-in-a-timeline-lg.webp";
+import observationMapImage from "../assets/projects/observation-map-lg.webp";
 import {Image} from "astro:assets";
 ---
 <section>
@@ -15,6 +16,13 @@ import {Image} from "astro:assets";
         <a href="/projekte/oekologisch" rel="prefetch">
             <Image
                src={oekologischImage}
+               alt="AltImage"
+               loading="eager"
+            />
+        </a>
+<a href="/projekte/observation-map" rel="prefetch">
+            <Image
+               src={observationMapImage}
                alt="AltImage"
                loading="eager"
             />
