@@ -10,10 +10,12 @@ const currentPath = Astro.url.pathname;
         const headerLogo = document.getElementById('logo-link');
         const documentBody = document.body;
         const headerLinks = document.querySelectorAll('.header-links');
+        const socialWrapper = document.getElementById('header-social-wrapper');
 
         const toggleBurger = () => {
             burgerToggle.classList.toggle('close-icon');
             headerNav.classList.toggle('show-nav');
+            socialWrapper.classList.toggle('show-nav');
             documentBody.classList.toggle('fix-body');
             if (burgerToggle.classList.contains('close-icon')) {
                 headerLogo.style.transform = 'scale(0)';
@@ -239,7 +241,16 @@ const currentPath = Astro.url.pathname;
   }
 
   .social-wrapper {
-    display: none;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    bottom: -4rem;
+    z-index: 3;
+    transition: bottom ease-in-out 300ms;
+    &.show-nav {
+      bottom: 1rem;
+      transition-delay: 0ms;
+    }
   }
 
   #burger-toggle {
@@ -335,6 +346,9 @@ const currentPath = Astro.url.pathname;
         top: -200px;
         left: 0;
         opacity: 0;
+        nav {
+          margin-right: unset;
+        }
       }
 
       &.fix-top-show {
@@ -346,6 +360,7 @@ const currentPath = Astro.url.pathname;
       }
     }
     .social-wrapper {
+      all: unset;
       display: flex;
       flex-flow: row nowrap;
       justify-content: end;
@@ -353,16 +368,7 @@ const currentPath = Astro.url.pathname;
       width: 50%;
 
       &.fix-top {
-        position: absolute;
-        top: 0;
-        right: 0;
-        gap: .15rem;
-        padding: 1rem 1rem 0 0;
-
-        .social-icon {
-          width: 25px;
-          height: 25px;
-        }
+        display: none;
       }
     }
     .social-icon {
@@ -374,9 +380,32 @@ const currentPath = Astro.url.pathname;
         width: 100%;
         height: auto;
         opacity: .8;
+        path {
+          transition: all ease-in-out 300ms;
+        }
+      }
 
-        &:hover {
-          opacity: 1;
+      &:hover {
+        &:first-child, &:nth-child(2) {
+          svg {
+            path:not(:nth-child(1)):not(:nth-child(2)) {
+              stroke: var(--color-accent);
+            }
+          }
+        }
+        &:nth-child(3) {
+          svg {
+            path:nth-child(2) {
+              stroke: var(--color-accent);
+            }
+          }
+        }
+        &:nth-child(4) {
+          svg {
+            path:nth-child(2), path:nth-child(3) {
+              stroke: var(--color-accent);
+            }
+          }
         }
       }
     }
