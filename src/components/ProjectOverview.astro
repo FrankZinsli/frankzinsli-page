@@ -4,7 +4,7 @@ import headerImage from "../assets/projects/1914-in-a-timeline-lg.webp";
 import observationMapImage from "../assets/projects/observation-map-lg.webp";
 import {Image} from "astro:assets";
 ---
-<section>
+<section  id="uebersicht">
     <article>
         <a href="/projekte/1914-in-a-timeline-glamhack" rel="prefetch">
             <Image
@@ -20,7 +20,7 @@ import {Image} from "astro:assets";
                loading="eager"
             />
         </a>
-<a href="/projekte/observation-map" rel="prefetch">
+        <a href="/projekte/observation-map" rel="prefetch">
             <Image
                src={observationMapImage}
                alt="AltImage"
@@ -45,8 +45,11 @@ import {Image} from "astro:assets";
         grid-template-columns: repeat(1, 1fr);
       }
       a {
-        display: inline-block;
+        display: block;
         width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: contain;
         img {
           width: 100%;
           height: auto;

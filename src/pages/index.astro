@@ -4,6 +4,7 @@ import ProjectSwiperVue from "@components/ProjectSwiper.vue";
 import developerImage from "@assets/icons/developer.svg";
 import fastImage from "@assets/icons/fast.svg";
 import contactImage from "@assets/icons/contact.svg";
+import welcomeImage from "@assets/icons/welcome.svg";
 import {Image} from "astro:assets";
 ---
 <Layout
@@ -11,7 +12,19 @@ import {Image} from "astro:assets";
         description="Beispielbeschreibung"
 >
     <section>
-        <h1>Herzlich willkommen auf meinem Portfolio</h1>
+        <div class="content">
+            <div class="text">
+                <h1>Herzlich willkommen auf meinem Portfolio</h1>
+                <p>Ich freue mich, dich auf meiner Website begrüssen zu dürfen!</p>
+                <p>Stöbere durch meine Website, um mehr über mich, meine Arbeit, meine Projekte und Leidenschaft für Technologie und Kreativität zu erfahren.</p>
+            </div>
+            <Image
+                    src={welcomeImage}
+                    alt="AltImage"
+                    loading="eager"
+            />
+        </div>
+        <h2 style="text-align: center; padding-top: 5rem">Einblick in meine Projekte</h2>
         <ProjectSwiperVue client:load />
     </section>
     <section>
@@ -49,7 +62,7 @@ import {Image} from "astro:assets";
             <div class="text">
                 <h2>Kontakt</h2>
                 <p>
-                    Ich freue mich darauf, die digitale Welt mit dir zu erkunden und stehe für Fragen jeglicher Art gerne zur Verfügung. Kontaktiere mich hierfür über das <a class="internal" href="/kontakt" rel="prefetch">Kontaktformular</a> oder schreibe mir einfach eine <a class="mail" href="mailto:mail@frankzinsli.ch">Mail</a>.
+                    Ich freue mich darauf, die digitale Welt mit dir zu erkunden und stehe für Fragen jeglicher Art gerne zur Verfügung. Kontaktiere mich hierfür über das <a class="internal" href="/kontakt" rel="prefetch">Kontaktformular</a>.
                 </p>
             </div>
             <Image
@@ -62,9 +75,6 @@ import {Image} from "astro:assets";
 </Layout>
 
 <style lang="scss">
-    h1 {
-        text-align: center;
-    }
     section {
         margin: 2.5rem 0 5rem;
       &:nth-child(2) {

@@ -5,6 +5,8 @@
       :centeredSlides="true"
       :slidesPerView="'auto'"
       :initialSlide= 1
+      :loop="true"
+      :lazyPreloadPrevNext="4"
       :coverflowEffect="{
         rotate: 50,
         stretch: 0,
@@ -36,7 +38,9 @@
             (min-width: 768px) 300px,
             250px"
           :src="project.images.sm.src"
-          :alt="project.alt">
+          :alt="project.alt"
+          loading="lazy"
+      >
     </swiper-slide>
   </swiper>
 </template>

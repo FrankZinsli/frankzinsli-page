@@ -1,5 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import contactImage from "@assets/icons/contact.svg";
+import {Image} from "astro:assets";
 ---
 
 <Layout
@@ -7,16 +9,56 @@ import Layout from '@layouts/Layout.astro';
         description="Beispielbeschreibung"
 >
     <section>
-        <h1>
-            Kontaktiere mich
-        </h1>
-        <p>
-            Möchten Sie mit mir in Kontakt treten? Ich freue mich darauf, von Ihnen zu hören! Auf dieser Seite finden Sie ein benutzerfreundliches Kontaktformular, das es Ihnen ermöglicht, mir Ihre Anliegen, Fragen oder Anfragen bequem zuzusenden.
+        <article>
+            <div class="content">
+                <div class="text">
+                    <h1>
+                        Kontaktiere mich
+                    </h1>
+                    <p>
+                        Möchtest du mit mir in Kontakt treten? Ich freue mich darauf, von dir zu hören!
+                        Fülle einfach das Formular aus, trage die Kontaktdaten ein und schreibe deine Nachricht.
+                        Ich werde mich so bald wie möglich bei dir melden.
+                    </p>
+                </div>
+                <Image
+                        src={contactImage}
+                        alt="AltImage"
+                        loading="eager"
+                />
+            </div>
+        </article>
 
-            Füllen Sie einfach das Formular aus, geben Sie Ihre Kontaktdaten an und schreiben Sie Ihre Nachricht. Ich werde mich so bald wie möglich bei Ihnen melden.
-        </p>
     </section>
 </Layout>
 
-<style>
+<style lang="scss">
+  section {
+    margin: 2.5rem 0 5rem;
+  }
+    .content {
+        text-align: left;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        .text {
+            width: calc(66% - 2.5rem);
+        }
+        img {
+            width: 33%;
+            height: auto;
+        }
+        @media (max-width: 650px) {
+            flex-flow: column;
+            gap: .5rem;
+            &:nth-child(even) {
+                flex-direction: column;
+            }
+            .text, img {
+                width: 100%;
+            }
+        }
+    }
 </style>

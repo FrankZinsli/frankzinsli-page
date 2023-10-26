@@ -1,58 +1,58 @@
 ---
-import { Image } from 'astro:assets';
+import {Image} from 'astro:assets';
 import headerImage from '../../assets/projects/oekologisch-lg.webp';
 import Layout from "../../layouts/Layout.astro";
 const metaTitle = 'Frank - Projekte - Observation Map';
 const metaDescription = 'MetaDescription';
 ---
 <Layout
-    title={metaTitle}
-    description={metaDescription}
+        title={metaTitle}
+        description={metaDescription}
 >
     <article>
         <header>
             <Image
-                src={headerImage}
-                alt="AltImage"
-                loading="eager"
+                    src={headerImage}
+                    alt="AltImage"
+                    loading="eager"
             />
         </header>
         <section>
-<h1>Case Study: "Observation Map V1.0 – Die Hilfsanwendung für Wildtierbeobachtung"</h1>
+            <h1>Case Study: "Observation Map V1.0 – Die Hilfsanwendung für Wildtierbeobachtung"</h1>
 
-<h2>Einleitung</h2>
-<p>Viele Wildtier-Beobachter teilen ein gemeinsames Anliegen - die Tiere in ihrem natürlichen Lebensraum so wenig wie möglich zu stören. Diese Sorge führte zur Entwicklung der "Observation Map", einer Anwendung, die es ermöglicht, Wildtierbeobachtungen auf einer interaktiven Karte festzuhalten. Dies kann direkt vor Ort mithilfe der Geodaten des Geräts oder bequem von zu Hause aus erfolgen. Das Ziel ist, durch die Karte zu erkennen, wo sich die Wildtiere aufhalten. Dies ermöglicht es, sich leise an die Tiere heranzuschleichen, ohne sie zu verschrecken.</p>
+            <h2>Einleitung</h2>
+            <p>Viele Wildtier-Beobachter teilen ein gemeinsames Anliegen - die Tiere in ihrem natürlichen Lebensraum so wenig wie möglich zu stören. Diese Sorge führte zur Entwicklung der "Observation Map", einer Anwendung, die es ermöglicht, Wildtierbeobachtungen auf einer interaktiven Karte festzuhalten. Dies kann direkt vor Ort mithilfe der Geodaten des Geräts oder bequem von zu Hause aus erfolgen. Das Ziel ist, durch die Karte zu erkennen, wo sich die Wildtiere aufhalten. Dies ermöglicht es, sich leise an die Tiere heranzuschleichen, ohne sie zu verschrecken.</p>
 
-<h2>Hintergrund</h2>
-<p>Die Inspiration für dieses Projekt ergab sich aus einer Anfrage eines alten Schulkameraden, der die "Zizers hilft" Website gesehen hatte. Er erkundigte sich, ob es möglich sei, eine ähnliche Web-Applikation für seine Wildtierbeobachtungen zu entwickeln. Als leidenschaftlicher Wildtierfotograf wollte er sicherstellen, dass seine Anwesenheit die Tiere nicht in Stress versetzt, sondern es ihm ermöglicht, sie gezielt zu beobachten.</p>
-<p>Da es sich hierbei um ein dynamisches Projekt handelte, erforderte die Umsetzung die Verwendung von neuen Technologien. Es wurden spezifische Tools ausgewählt, um die Anforderungen des Projekts zu erfüllen, darunter:</p>
-<ul>
-  <li><strong>Vue JS</strong> als JavaScript-Framework.</li>
-  <li><strong>VueLayers</strong> für die Integration von OpenStreetMap.</li>
-  <li><strong>Firebase Authentication</strong> zur Verwaltung der Benutzeranmeldungen.</li>
-</ul>
+            <h2>Hintergrund</h2>
+            <p>Die Inspiration für dieses Projekt ergab sich aus einer Anfrage eines alten Schulkameraden, der die "Zizers hilft" Website gesehen hatte. Er erkundigte sich, ob es möglich sei, eine ähnliche Web-Applikation für seine Wildtierbeobachtungen zu entwickeln. Als leidenschaftlicher Wildtierfotograf wollte er sicherstellen, dass seine Anwesenheit die Tiere nicht in Stress versetzt, sondern es ihm ermöglicht, sie gezielt zu beobachten.</p>
+            <p>Da es sich hierbei um ein dynamisches Projekt handelte, erforderte die Umsetzung die Verwendung von neuen Technologien. Es wurden spezifische Tools ausgewählt, um die Anforderungen des Projekts zu erfüllen, darunter:</p>
+            <ul>
+                <li><strong>Vue JS</strong> als JavaScript-Framework.</li>
+                <li><strong>VueLayers</strong> für die Integration von OpenStreetMap.</li>
+                <li><strong>Firebase Authentication</strong> zur Verwaltung der Benutzeranmeldungen.</li>
+            </ul>
 
-<h2>Projektziele</h2>
-<p>Die Hauptziele der "Observation Map" waren:</p>
-<ol>
-  <li>Das Erfassen von neuen Beobachtungen mithilfe von Geodaten.</li>
-  <li>Das Erfassen von neuen Beobachtungen über die interaktive Karte.</li>
-  <li>Die Darstellung der erfassten Beobachtungen auf einer Karte.</li>
-  <li>Die Darstellung der erfassten Beobachtungen in tabellarischer Form.</li>
-</ol>
+            <h2>Projektziele</h2>
+            <p>Die Hauptziele der "Observation Map" waren:</p>
+            <ol>
+                <li>Das Erfassen von neuen Beobachtungen mithilfe von Geodaten.</li>
+                <li>Das Erfassen von neuen Beobachtungen über die interaktive Karte.</li>
+                <li>Die Darstellung der erfassten Beobachtungen auf einer Karte.</li>
+                <li>Die Darstellung der erfassten Beobachtungen in tabellarischer Form.</li>
+            </ol>
 
-<h2>Funktionsumfang</h2>
-<p>Im Rahmen der ersten Version der Web-Applikation wurden diese grundlegenden Funktionen erfolgreich integriert. Benutzer konnten ihre Beobachtungen einfach erfassen und auf einer Karte sowie in einer übersichtlichen Tabelle anzeigen lassen. Diese Funktionen schufen eine benutzerfreundliche Umgebung für Wildtierbeobachter, um ihre Erlebnisse festzuhalten und zu organisieren.</p>
+            <h2>Funktionsumfang</h2>
+            <p>Im Rahmen der ersten Version der Web-Applikation wurden diese grundlegenden Funktionen erfolgreich integriert. Benutzer konnten ihre Beobachtungen einfach erfassen und auf einer Karte sowie in einer übersichtlichen Tabelle anzeigen lassen. Diese Funktionen schufen eine benutzerfreundliche Umgebung für Wildtierbeobachter, um ihre Erlebnisse festzuhalten und zu organisieren.</p>
 
-<h2>Technologische Umsetzung</h2>
-<p>Die technische Umsetzung des Projekts erfolgte mithilfe modernster Technologien. Vue JS diente als JavaScript-Framework, um die Benutzeroberfläche zu gestalten. VueLayers wurde verwendet, um OpenStreetMap zu integrieren, was eine reibungslose Kartenansicht ermöglichte. Die Verwaltung von Benutzeranmeldungen und -authentifizierungen erfolgte über Firebase.</p>
+            <h2>Technologische Umsetzung</h2>
+            <p>Die technische Umsetzung des Projekts erfolgte mithilfe modernster Technologien. Vue JS diente als JavaScript-Framework, um die Benutzeroberfläche zu gestalten. VueLayers wurde verwendet, um OpenStreetMap zu integrieren, was eine reibungslose Kartenansicht ermöglichte. Die Verwaltung von Benutzeranmeldungen und -authentifizierungen erfolgte über Firebase.</p>
 
-<h2>Ausblick und Demoversion</h2>
-<p>Eine Demoversion mit den Grundfunktionen des Projekts ist auf meiner Github-Pages Seite verfügbar. Beachten Sie jedoch, dass Firebase in dieser Version noch nicht integriert ist, um einen übermäßigen Datenfluss zu verhindern, bevor die Anwendung in ihrem vollen Funktionsumfang fertiggestellt ist.</p>
-<p>Weitere Informationen und Details zum Projekt finden Sie in meinem Github-Repository.</p>
+            <h2>Ausblick und Demoversion</h2>
+            <p>Eine Demoversion mit den Grundfunktionen des Projekts ist auf meiner Github-Pages Seite verfügbar. Beachten Sie jedoch, dass Firebase in dieser Version noch nicht integriert ist, um einen übermäßigen Datenfluss zu verhindern, bevor die Anwendung in ihrem vollen Funktionsumfang fertiggestellt ist.</p>
+            <p>Weitere Informationen und Details zum Projekt finden Sie in meinem Github-Repository.</p>
 
-<h2>Fazit</h2>
-<p>Die "Observation Map" bietet eine innovative Lösung für Wildtierbeobachter, die es ermöglicht, ihre Beobachtungen auf einfache Weise festzuhalten und zu organisieren. Im Gegensatz zu anderen Jagd-Apps wurde der Fokus hier bewusst auf die Bedürfnisse von Beobachtern gelegt, wodurch der Funktionsumfang überschaubar bleibt. Das Projekt zeichnet sich durch die Verwendung moderner Technologien und die Integration von Geodaten aus und trägt dazu bei, die natürliche Umgebung der Tiere zu schützen und das Beobachten zu erleichtern.</p>
+            <h2>Fazit</h2>
+            <p>Die "Observation Map" bietet eine innovative Lösung für Wildtierbeobachter, die es ermöglicht, ihre Beobachtungen auf einfache Weise festzuhalten und zu organisieren. Im Gegensatz zu anderen Jagd-Apps wurde der Fokus hier bewusst auf die Bedürfnisse von Beobachtern gelegt, wodurch der Funktionsumfang überschaubar bleibt. Das Projekt zeichnet sich durch die Verwendung moderner Technologien und die Integration von Geodaten aus und trägt dazu bei, die natürliche Umgebung der Tiere zu schützen und das Beobachten zu erleichtern.</p>
 
         </section>
         <footer>

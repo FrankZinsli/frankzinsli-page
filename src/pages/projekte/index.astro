@@ -1,28 +1,71 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import ProjectOverview from "@components/ProjectOverview.astro";
+import projectsImage from "@assets/icons/projects.svg";
+import {Image} from "astro:assets";
 ---
-
 <Layout
 	title="Mein persönliches Portfolio - Frank"
 	description="Beispielbeschreibung"
 >
-	<section>
-		<ProjectOverview />
-<p>
-Willkommen auf meiner Projekte-Seite, auf der Sie eine Auswahl meiner Arbeiten finden. Diese Projekte sind vielfältig und repräsentieren meine Webentwicklungskompetenz, von Nuxt JS und Vue JS bis hin zu Astro Build und WordPress.
-</p>
+	<section id="projects-section" data-query="">
+		<article>
+			<div class="content">
+				<div class="text">
+					<h1>Einblicke in meine Projekte</h1>
+					<p>
+						Willkommen auf meiner Projekte-Seite, wo du eine Übersicht über meine bisherigen Projekte findest. Sie zeigen dir, wie ich in der Praxis arbeite und welchen Mehrwert ich in verschiedenen Aufgabenbereichen bieten kann.
+					</p>
+					<p>
+						Projekte sind für mich nicht nur abgeschlossene Aufgaben, sondern eine Sammlung von konkreten Lösungen und Ergebnissen. Jedes Projekt hier zeigt, wie ich bestimmte Herausforderungen angegangen und bewältigt habe.
+					</p>
+				</div>
+				<Image
+					src={projectsImage}
+					alt="AltImage"
+					loading="eager"
+				/>
+			</div>
+		</article>
 
-<p>
-Jedes Projekt erzählt seine eigene Geschichte, sei es eine SEO-optimierte Website, eine benutzerfreundliche Web-Applikation oder eine Progressive Web App. Ich arbeite mit einer breiten Palette von Technologien, um die Anforderungen meiner Kunden zu erfüllen.
-</p>
-
-<p>
-Entdecken Sie meine Projekte und erhalten Sie Einblicke in meine vielseitige Arbeit. Wenn Sie weitere Informationen zu einem bestimmten Projekt wünschen, stehe ich Ihnen gerne zur Verfügung.
-</p>
-
+		<article>
+			<h2 style="padding-top: 5rem">Projektübersicht</h2>
+			<p>
+				Entdecke meine Projekte und erhalte Einblicke in meine vielseitige Arbeit. Wenn du weitere Informationen zu einem bestimmten Projekt wünschst, stehe ich gerne zur Verfügung.
+			</p>
+			<ProjectOverview />
+		</article>
 	</section>
 </Layout>
 
-<style>
+<style lang="scss">
+	section {
+		text-align: center;
+		margin: 2.5rem 0 5rem;
+	}
+	.content {
+		text-align: left;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		gap: 2.5rem;
+		.text {
+			width: calc(66% - 2.5rem);
+		}
+		img {
+			width: 33%;
+			height: auto;
+		}
+		@media (max-width: 650px) {
+			flex-flow: column;
+			gap: .5rem;
+			&:nth-child(even) {
+				flex-direction: column;
+			}
+			.text, img {
+				width: 100%;
+			}
+		}
+	}
 </style>

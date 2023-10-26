@@ -84,7 +84,7 @@ main p a {
     background-size: 1rem;
     background-position: left center;
     background-repeat: no-repeat;
-    padding-left: 1rem;
+    padding-left: 1.3rem;
     transition: all ease-in-out 300ms;
 }
 main p a.mail {
