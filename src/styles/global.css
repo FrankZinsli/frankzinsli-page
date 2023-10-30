@@ -56,10 +56,12 @@ html, body {
     flex-flow: column nowrap;
     justify-content: space-between;
     scroll-behavior: smooth;
-    @supports (min-height: 100dvh) {
+    min-height: 100vh;
+}
+@supports(min-height: 1dvh) {
+    html, body {
         min-height: 100dvh;
     }
-    min-height: 100vh;
 }
 body.fix-body {
     overflow: hidden;
