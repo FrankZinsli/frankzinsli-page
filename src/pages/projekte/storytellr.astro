@@ -1,0 +1,113 @@
+---
+import {Image} from "astro:assets";
+import herausforderungImg from "@assets/icons/herausforderung.svg";
+import loesungImg from "@assets/icons/loesung.svg";
+import ergebnissImg from "@assets/icons/ergebnisse.svg";
+import fazitImg from "@assets/icons/fazit.svg";
+import headerImage from '@assets/projects/storytellr-header.webp';
+import LayoutProject from "@layouts/LayoutProject.astro";
+const metaTitle = 'Storytellr - Projekte - Frank';
+const metaDescription = 'MetaDescription';
+const headerImgAlt = 'Alt Image';
+---
+<LayoutProject
+        title={metaTitle}
+        description={metaDescription}
+        headerImage={headerImage}
+        headerImageAlt={headerImgAlt}
+>
+    <section>
+        <h1>Storytellr.js - Erzähle deine Geschichte</h1>
+
+        <section class="content">
+            <div class="text">
+                <h2>Herausforderung</h2>
+                <p>Die Herausforderung bestand darin, die Wirkung von Storytelling auf Webseiten zu erforschen und zu verstehen. Das Ziel war es zu untersuchen, wie verschiedene Storytelling-Elemente auf Webseiten eingesetzt werden und wie sie auf die Nutzerinnen und Nutzer wirken.</p>
+            </div>
+            <Image
+                    src={herausforderungImg}
+                    alt="AltImage"
+                    loading="eager"
+            />
+        </section>
+
+        <section class="content">
+            <div class="text">
+                <h2>Lösung</h2>
+                <p>Um dieser Herausforderung zu begegnen, wurden Experteninterviews durchgeführt und Erkenntnisse daraus gewonnen. Anschließend wurde eine Online-Umfrage und Usability-Tests durchgeführt, um weiteres Feedback zu sammeln. Basierend auf den gesammelten Daten wurde ein Leitfaden für das Storytelling auf Webseiten entwickelt. Dieser Leitfaden sollte als Produkt aus der Bachelorthesis dienen.</p>
+                <p>Zusätzlich wurde im Rahmen eines Lehrprojekts eine JavaScript-Bibliothek namens "Storytellr.js" entwickelt. Diese Bibliothek wurde speziell für Studierende des MMP-Studiengangs konzipiert und ermöglichte es ihnen, ihre Projekte und Geschichten auf Webseiten zu präsentieren. Eine Landingpage für die JavaScript-Bibliothek wurde ebenfalls erstellt, um die Anwendungsmöglichkeiten zu demonstrieren.</p>
+            </div>
+            <Image
+                    src={loesungImg}
+                    alt="AltImage"
+                    loading="eager"
+            />
+        </section>
+
+        <section class="content">
+            <div class="text">
+                <h2>Ergebnisse</h2>
+                <p>
+                    Das Ergebnis dieses Projekts war ein Leitfaden für Storytelling auf Webseiten, der auf wissenschaftlichen Erkenntnissen basierte. Zudem wurde die JavaScript-Bibliothek "Storytellr.js" entwickelt, die den Studierenden eine einfache Möglichkeit bietet, ihre Geschichten im Web zu erzählen. Diese Lösungen ermöglichten es, gezielte Erinnerungen, Emotionen, Sinne, Struktur, Interaktion, Usability und relevante Fakten in das Storytelling auf Webseiten zu integrieren.
+                </p>
+            </div>
+            <Image
+                    src={ergebnissImg}
+                    alt="AltImage"
+                    loading="eager"
+            />
+        </section>
+
+        <section class="content">
+            <div class="text">
+                <h2>Fazit</h2>
+                <p>
+                    Storytelling auf Webseiten ist mehr als das Erzählen einer Geschichte. Es geht darum, zielgruppenorientierte Botschaften in fragmentierter Form zu vermitteln und die Nutzerinnen und Nutzer aktiv in die Gestaltung der Geschichte einzubeziehen. Der entwickelte Leitfaden und die JavaScript-Bibliothek "Storytellr.js" sind wertvolle Werkzeuge, um dieses Ziel zu erreichen. Das Projekt zeigt, dass durch die Integration von verschiedenen Storytelling-Elementen und Medieninhalten eine immersive und effektive Art des Storytellings auf Webseiten geschaffen werden kann. Es betont die Bedeutung der Customer-Centricity und die Notwendigkeit, die Zielgruppe in den Mittelpunkt des Storytellings zu stellen. Storytelling auf Webseiten kann dazu beitragen, starke emotionale Bindungen herzustellen und die Informationen in den Köpfen der Nutzer zu verankern. Es bietet eine flexible und reichhaltige Möglichkeit, Botschaften an die Zielgruppe zu vermitteln und Erinnerungen zu schaffen.
+                </p>
+            </div>
+            <Image
+                    src={fazitImg}
+                    alt="AltImage"
+                    loading="eager"
+            />
+        </section>
+    </section>
+</LayoutProject>
+
+<style lang="scss">
+  section {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5rem;
+    h1 {
+      margin-bottom: -3rem;
+    }
+  }
+  .content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .text {
+      width: calc(66% - 2.5rem);
+    }
+    img {
+      width: 33%;
+      height: auto;
+    }
+    @media (max-width: 650px) {
+      flex-flow: column;
+      gap: .5rem;
+      &:nth-child(even) {
+        flex-direction: column;
+      }
+      .text, img {
+        width: 100%;
+      }
+    }
+  }
+</style>
