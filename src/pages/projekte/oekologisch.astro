@@ -1,6 +1,12 @@
 ---
+import {Image} from "astro:assets";
 import headerImage from '@assets/projects/oekologisch-lg.webp';
 import LayoutProject from "@layouts/LayoutProject.astro";
+import herausforderungImg from "@assets/icons/herausforderung.svg";
+import loesungImg from "@assets/icons/loesung.svg";
+import ergebnissImg from "@assets/icons/ergebnisse.svg";
+import fazitImg from "@assets/icons/fazit.svg";
+import feautureImg from "@assets/icons/zukunft.svg";
 const metaTitle = 'Frank - Projekte - Ökologisch';
 const metaDescription = 'MetaDescription';
 const headerImgAlt = 'Alt Description';
@@ -13,30 +19,102 @@ const headerImgAlt = 'Alt Description';
 >
     <section>
         <h1>ökoLOGISCH! - Eine E-Learning-Plattform für Nachhaltigkeit</h1>
+        <section class="content">
+            <div class="text">
+                <h2>Herausforderung</h2>
+                <p>Die Webseite "ökoLOGISCH!" ist eine webbasierte E-Learning-Plattform, die speziell für Schülerinnen und Schüler der vierten bis sechsten Klasse entwickelt wurde. Dieses Projekt entstand im Rahmen des Studiengangs Multimedia Production an der Fachhochschule Graubünden. Die Hauptzielsetzung bestand darin, eine interaktive Lernplattform zu schaffen, die Kinder altersgerecht für Fragen der Nachhaltigkeit und des Umweltschutzes sensibilisiert, insbesondere im Kontext des Sustainable Development Goal (SDG) 12 - "Nachhaltige Konsum- und Produktionsmuster sicherstellen."</p>
+            </div>
+            <Image
+                    src={herausforderungImg}
+                    alt="AltImage"
+                    loading="eager"
+            />
+        </section>
 
-        <h2>Einleitung:</h2>
-        <p>Die Webseite "ökoLOGISCH!" ist eine webbasierte E-Learning-Plattform, die sich an Schülerinnen und Schüler der vierten bis sechsten Klasse richtet. Sie wurde im Rahmen des Studiengangs Multimedia Production an der Fachhochschule Graubünden entwickelt. Das Projekt verfolgt das Ziel, Kinder altersgerecht für Themen der Nachhaltigkeit und Umweltschutz zu sensibilisieren, wobei insbesondere das Sustainable Development Goal (SDG) 12 - "Nachhaltige Konsum- und Produktionsmuster sicherstellen" - im Fokus steht.</p>
+        <section class="content">
+            <div class="text">
+                <h2>Lösung</h2>
+                <p>Die E-Learning-Plattform "ökoLOGISCH!" wurde als eine Verschmelzung der gestalterischen Elemente des Moduls "Visualisieren" und des Moduls "Interaktive Medien" entwickelt. Sie zielt darauf ab, die Bedeutung des Umweltschutzes zu verdeutlichen und Schülerinnen und Schülern anhand alltäglicher Beispiele zu zeigen, wie sie aktiv zu einer nachhaltigeren Welt beitragen können.</p>
+            </div>
+            <Image
+                    src={loesungImg}
+                    alt="AltImage"
+                    loading="eager"
+            />
+        </section>
 
-        <h2>Hintergrund:</h2>
-        <p>Die E-Learning-Plattform "ökoLOGISCH!" entstand als Verbindung der gestalterischen Aspekte des Moduls Visualisieren und des Moduls Interaktive Medien. Die Plattform zeigt die immense Bedeutung des Umweltschutzes und verdeutlicht anhand von Alltagsbeispielen, wie Schülerinnen und Schüler aktiv zu einer nachhaltigeren Welt beitragen können.</p>
+        <section class="content">
+            <div class="text">
+                <h2>Ergebnisse</h2>
+                <p>Die Hauptzielsetzung von "ökoLOGISCH!" war es, Schülerinnen und Schüler für Nachhaltigkeitsthemen zu sensibilisieren und Wissen über SDG 12 zu vermitteln. Die Plattform hat dazu beigetragen, das Bewusstsein für nachhaltige Konsum- und Produktionsmuster zu schärfen und die Umweltbildung in der jungen Generation zu fördern. Sie ist in verschiedene Themenbereiche unterteilt, darunter Energie, Nachhaltigkeit, Klimawandel, Food-Waste und Recycling. Jeder Themenbereich enthält Einführungen und mehrere Lektionen, die das jeweilige Thema vertiefen. Minispiele und Quizrunden stehen zur Verfügung, um das gelernte Wissen zu überprüfen. Ein Glossar erläutert wichtige Begriffe und Definitionen im Zusammenhang mit Umweltschutz und Nachhaltigkeit.</p>
+            </div>
+            <Image
+                    src={ergebnissImg}
+                    alt="AltImage"
+                    loading="eager"
+            />
+        </section>
 
-        <h2>Zielsetzung:</h2>
-        <p>Die primäre Zielsetzung von "ökoLOGISCH!" besteht darin, Schülerinnen und Schüler für Nachhaltigkeitsthemen zu sensibilisieren und ihnen Wissen über SDG 12 zu vermitteln. Die Plattform verfolgt das Ziel, ein Bewusstsein für nachhaltige Konsum- und Produktionsmuster zu schaffen und damit die Umweltbildung in der jungen Generation zu fördern.</p>
+        <section class="content">
+            <div class="text">
+                <h2>Fazit</h2>
+                <p>"ökoLOGISCH!" ist eine wertvolle E-Learning-Plattform, die Schülerinnen und Schülern ein Bewusstsein für Umweltschutz und Nachhaltigkeit vermittelt. Ihre Struktur, die vielfältigen Lernmaterialien und das Glossar tragen dazu bei, das Wissen der jungen Generation in Bezug auf nachhaltige Konsum- und Produktionsmuster zu erweitern. Dieses Projekt dient als vorbildliches Beispiel für die Integration von Bildung und Umweltschutz in einem ansprechenden Online-Format.</p>
+            </div>
+            <Image
+                    src={fazitImg}
+                    alt="AltImage"
+                    loading="eager"
+            />
+        </section>
 
-        <h2>Inhalte und Struktur:</h2>
-        <p>Die Plattform ist in verschiedene Themenbereiche unterteilt, darunter Energie, Nachhaltigkeit, Klimawandel, Food-Waste und Recycling. Jeder Themenbereich enthält eine Einführung und mehrere Lektionen, die das jeweilige Thema vertiefen. Zudem sind Minispiele und Quizrunden verfügbar, die den Schülern ermöglichen, ihr erlerntes Wissen zu überprüfen.</p>
-
-        <h2>Glossar:</h2>
-        <p>Die Webseite enthält ein Glossar, das wichtige Begriffe und Definitionen im Zusammenhang mit Umweltschutz und Nachhaltigkeit erläutert. Dieses Glossar dient der besseren Verständlichkeit der behandelten Themen.</p>
-
-        <h2>Team und Projekt:</h2>
-        <p>Das Projekt "ökoLOGISCH!" wurde von einem Team bestehend aus Delia Schafer, Zoe Waltenspül, Ysabelle Moser und Frank Zinsli entwickelt. Es entstand als Teil des Studiengangs Multimedia Production an der Fachhochschule Graubünden.</p>
-
-        <h2>Fazit:</h2>
-        <p>"ökoLOGISCH!" ist eine bedeutende E-Learning-Plattform, die Schülerinnen und Schüler für Umweltschutz und Nachhaltigkeit sensibilisiert. Die Struktur, die vielfältigen Lernmaterialien und das Glossar tragen dazu bei, das Wissen der jungen Generation in Bezug auf nachhaltige Konsum- und Produktionsmuster zu erweitern. Das Projekt ist ein herausragendes Beispiel für die Integration von Bildung und Umweltschutz in einem ansprechenden Online-Format.</p>
-
-        <h2>Zukünftige Entwicklungen:</h2>
-        <p>Die Plattform kann weiterhin ausgebaut werden, indem neue Lektionen, Minispiele und Quizrunden hinzugefügt werden. Eine aktive Pflege und regelmäßige Aktualisierung der Inhalte gewährleisten, dass die Webseite stets informativ und lehrreich bleibt.</p>
-
+        <section class="content">
+            <div class="text">
+                <h2>Zukünftige Entwicklungen</h2>
+                <p>Um die Plattform weiter zu verbessern, können zusätzliche Lektionen, Minispiele und Quizrunden hinzugefügt werden. Regelmäßige Aktualisierungen und Pflege der Inhalte gewährleisten, dass die Webseite informativ und lehrreich bleibt, um Schülerinnen und Schüler weiterhin auf spannende Weise für Nachhaltigkeitsfragen zu sensibilisieren.</p>
+            </div>
+            <Image
+                    src={feautureImg}
+                    alt="AltImage"
+                    loading="eager"
+            />
+        </section>
     </section>
 </LayoutProject>
+
+<style lang="scss">
+  section {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5rem;
+    h1 {
+      margin-bottom: -3rem;
+    }
+  }
+  .content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .text {
+      width: calc(66% - 2.5rem);
+    }
+    img {
+      width: 33%;
+      height: auto;
+    }
+    @media (max-width: 650px) {
+      flex-flow: column;
+      gap: .5rem;
+      &:nth-child(even) {
+        flex-direction: column;
+      }
+      .text, img {
+        width: 100%;
+      }
+    }
+  }
+</style>
