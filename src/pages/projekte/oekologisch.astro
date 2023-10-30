@@ -1,52 +1,42 @@
 ---
-import {Image} from 'astro:assets';
-import headerImage from '../../assets/projects/oekologisch-lg.webp';
-import Layout from "../../layouts/Layout.astro";
+import headerImage from '@assets/projects/oekologisch-lg.webp';
+import LayoutProject from "@layouts/LayoutProject.astro";
 const metaTitle = 'Frank - Projekte - Ökologisch';
 const metaDescription = 'MetaDescription';
+const headerImgAlt = 'Alt Description';
 ---
-<Layout
+<LayoutProject
         title={metaTitle}
         description={metaDescription}
+        headerImage={headerImage}
+        headerImageAlt={headerImgAlt}
 >
-    <article>
-        <header>
-            <Image
-                    src={headerImage}
-                    alt="AltImage"
-                    loading="eager"
-            />
-        </header>
-        <div>
-            <h1>Case Study: "ökoLOGISCH!" - Eine E-Learning-Plattform für Nachhaltigkeit</h1>
+    <section>
+        <h1>ökoLOGISCH! - Eine E-Learning-Plattform für Nachhaltigkeit</h1>
 
-            <h2>Einleitung:</h2>
-            <p>Die Webseite "ökoLOGISCH!" ist eine webbasierte E-Learning-Plattform, die sich an Schülerinnen und Schüler der vierten bis sechsten Klasse richtet. Sie wurde im Rahmen des Studiengangs Multimedia Production an der Fachhochschule Graubünden entwickelt. Das Projekt verfolgt das Ziel, Kinder altersgerecht für Themen der Nachhaltigkeit und Umweltschutz zu sensibilisieren, wobei insbesondere das Sustainable Development Goal (SDG) 12 - "Nachhaltige Konsum- und Produktionsmuster sicherstellen" - im Fokus steht.</p>
+        <h2>Einleitung:</h2>
+        <p>Die Webseite "ökoLOGISCH!" ist eine webbasierte E-Learning-Plattform, die sich an Schülerinnen und Schüler der vierten bis sechsten Klasse richtet. Sie wurde im Rahmen des Studiengangs Multimedia Production an der Fachhochschule Graubünden entwickelt. Das Projekt verfolgt das Ziel, Kinder altersgerecht für Themen der Nachhaltigkeit und Umweltschutz zu sensibilisieren, wobei insbesondere das Sustainable Development Goal (SDG) 12 - "Nachhaltige Konsum- und Produktionsmuster sicherstellen" - im Fokus steht.</p>
 
-            <h2>Hintergrund:</h2>
-            <p>Die E-Learning-Plattform "ökoLOGISCH!" entstand als Verbindung der gestalterischen Aspekte des Moduls Visualisieren und des Moduls Interaktive Medien. Die Plattform zeigt die immense Bedeutung des Umweltschutzes und verdeutlicht anhand von Alltagsbeispielen, wie Schülerinnen und Schüler aktiv zu einer nachhaltigeren Welt beitragen können.</p>
+        <h2>Hintergrund:</h2>
+        <p>Die E-Learning-Plattform "ökoLOGISCH!" entstand als Verbindung der gestalterischen Aspekte des Moduls Visualisieren und des Moduls Interaktive Medien. Die Plattform zeigt die immense Bedeutung des Umweltschutzes und verdeutlicht anhand von Alltagsbeispielen, wie Schülerinnen und Schüler aktiv zu einer nachhaltigeren Welt beitragen können.</p>
 
-            <h2>Zielsetzung:</h2>
-            <p>Die primäre Zielsetzung von "ökoLOGISCH!" besteht darin, Schülerinnen und Schüler für Nachhaltigkeitsthemen zu sensibilisieren und ihnen Wissen über SDG 12 zu vermitteln. Die Plattform verfolgt das Ziel, ein Bewusstsein für nachhaltige Konsum- und Produktionsmuster zu schaffen und damit die Umweltbildung in der jungen Generation zu fördern.</p>
+        <h2>Zielsetzung:</h2>
+        <p>Die primäre Zielsetzung von "ökoLOGISCH!" besteht darin, Schülerinnen und Schüler für Nachhaltigkeitsthemen zu sensibilisieren und ihnen Wissen über SDG 12 zu vermitteln. Die Plattform verfolgt das Ziel, ein Bewusstsein für nachhaltige Konsum- und Produktionsmuster zu schaffen und damit die Umweltbildung in der jungen Generation zu fördern.</p>
 
-            <h2>Inhalte und Struktur:</h2>
-            <p>Die Plattform ist in verschiedene Themenbereiche unterteilt, darunter Energie, Nachhaltigkeit, Klimawandel, Food-Waste und Recycling. Jeder Themenbereich enthält eine Einführung und mehrere Lektionen, die das jeweilige Thema vertiefen. Zudem sind Minispiele und Quizrunden verfügbar, die den Schülern ermöglichen, ihr erlerntes Wissen zu überprüfen.</p>
+        <h2>Inhalte und Struktur:</h2>
+        <p>Die Plattform ist in verschiedene Themenbereiche unterteilt, darunter Energie, Nachhaltigkeit, Klimawandel, Food-Waste und Recycling. Jeder Themenbereich enthält eine Einführung und mehrere Lektionen, die das jeweilige Thema vertiefen. Zudem sind Minispiele und Quizrunden verfügbar, die den Schülern ermöglichen, ihr erlerntes Wissen zu überprüfen.</p>
 
-            <h2>Glossar:</h2>
-            <p>Die Webseite enthält ein Glossar, das wichtige Begriffe und Definitionen im Zusammenhang mit Umweltschutz und Nachhaltigkeit erläutert. Dieses Glossar dient der besseren Verständlichkeit der behandelten Themen.</p>
+        <h2>Glossar:</h2>
+        <p>Die Webseite enthält ein Glossar, das wichtige Begriffe und Definitionen im Zusammenhang mit Umweltschutz und Nachhaltigkeit erläutert. Dieses Glossar dient der besseren Verständlichkeit der behandelten Themen.</p>
 
-            <h2>Team und Projekt:</h2>
-            <p>Das Projekt "ökoLOGISCH!" wurde von einem Team bestehend aus Delia Schafer, Zoe Waltenspül, Ysabelle Moser und Frank Zinsli entwickelt. Es entstand als Teil des Studiengangs Multimedia Production an der Fachhochschule Graubünden.</p>
+        <h2>Team und Projekt:</h2>
+        <p>Das Projekt "ökoLOGISCH!" wurde von einem Team bestehend aus Delia Schafer, Zoe Waltenspül, Ysabelle Moser und Frank Zinsli entwickelt. Es entstand als Teil des Studiengangs Multimedia Production an der Fachhochschule Graubünden.</p>
 
-            <h2>Fazit:</h2>
-            <p>"ökoLOGISCH!" ist eine bedeutende E-Learning-Plattform, die Schülerinnen und Schüler für Umweltschutz und Nachhaltigkeit sensibilisiert. Die Struktur, die vielfältigen Lernmaterialien und das Glossar tragen dazu bei, das Wissen der jungen Generation in Bezug auf nachhaltige Konsum- und Produktionsmuster zu erweitern. Das Projekt ist ein herausragendes Beispiel für die Integration von Bildung und Umweltschutz in einem ansprechenden Online-Format.</p>
+        <h2>Fazit:</h2>
+        <p>"ökoLOGISCH!" ist eine bedeutende E-Learning-Plattform, die Schülerinnen und Schüler für Umweltschutz und Nachhaltigkeit sensibilisiert. Die Struktur, die vielfältigen Lernmaterialien und das Glossar tragen dazu bei, das Wissen der jungen Generation in Bezug auf nachhaltige Konsum- und Produktionsmuster zu erweitern. Das Projekt ist ein herausragendes Beispiel für die Integration von Bildung und Umweltschutz in einem ansprechenden Online-Format.</p>
 
-            <h2>Zukünftige Entwicklungen:</h2>
-            <p>Die Plattform kann weiterhin ausgebaut werden, indem neue Lektionen, Minispiele und Quizrunden hinzugefügt werden. Eine aktive Pflege und regelmäßige Aktualisierung der Inhalte gewährleisten, dass die Webseite stets informativ und lehrreich bleibt.</p>
+        <h2>Zukünftige Entwicklungen:</h2>
+        <p>Die Plattform kann weiterhin ausgebaut werden, indem neue Lektionen, Minispiele und Quizrunden hinzugefügt werden. Eine aktive Pflege und regelmäßige Aktualisierung der Inhalte gewährleisten, dass die Webseite stets informativ und lehrreich bleibt.</p>
 
-        </div>
-        <footer>
-            This is the Footer
-        </footer>
-    </article>
-</Layout>
+    </section>
+</LayoutProject>
