@@ -13,13 +13,7 @@ export default defineConfig({
     port: 21123
   },
   router: 'spa',
-  integrations: [prefetch(), vue(), Compress({
-    CSS: true,
-    HTML: true,
-    JavaScript: false,
-    SVG: true,
-    Image: true
-  }), sitemap({
+  integrations: [prefetch(), vue(), sitemap({
     changefreq: 'weekly',
     priority: 1,
     lastmod: new Date()

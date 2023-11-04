@@ -18,8 +18,5 @@
     "sass": "^1.69.5",
     "swiper": "^10.3.1",
     "vue": "^3.3.7"
-  },
-  "devDependencies": {
-    "astro-compress": "2.2.3"
   }
 }
