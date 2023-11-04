@@ -1,6 +1,5 @@
 import { defineConfig, squooshImageService } from 'astro/config';
 import prefetch from "@astrojs/prefetch";
-import Compress from "astro-compress";
 import vue from "@astrojs/vue";
 import robotsTxt from 'astro-robots-txt';
 import sitemap from "@astrojs/sitemap";
