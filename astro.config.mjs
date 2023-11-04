@@ -16,7 +16,7 @@ export default defineConfig({
   integrations: [prefetch(), vue(), Compress({
     CSS: true,
     HTML: true,
-    JavaScript: true,
+    JavaScript: false,
     SVG: true,
     Image: true
   }), sitemap({
