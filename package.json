@@ -13,10 +13,10 @@
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/vue": "^3.0.4",
-    "astro": "^3.5.0",
+    "astro": "^3.6.0",
     "astro-robots-txt": "^1.0.0",
     "sass": "^1.69.5",
-    "swiper": "^11.0.4",
-    "vue": "^3.3.8"
+    "swiper": "^11.0.5",
+    "vue": "^3.3.9"
   }
 }
